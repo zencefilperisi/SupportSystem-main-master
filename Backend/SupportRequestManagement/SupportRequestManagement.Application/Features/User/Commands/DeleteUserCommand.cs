@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using System;
 
 namespace SupportRequestManagement.Application.Features.User.Commands
 {
-    internal class DeleteUserCommand
+    // Belirli bir kullanıcıyı silmek için kullanılan komut
+    public class DeleteUserCommand : IRequest<bool>
     {
+        public Guid UserId { get; set; }
+
+        public DeleteUserCommand(Guid userId)
+        {
+            UserId = userId;
+        }
     }
 }

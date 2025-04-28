@@ -1,12 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SupportRequestManagement.Application.Features.User.Dtos
 {
-    internal class UserDto
+    public class UserDto
     {
+        public Guid Id { get; set; }              // Kullanıcının benzersiz kimliği
+        public string FirstName { get; set; }     // Adı
+        public string LastName { get; set; }      // Soyadı
+        public string Email { get; set; }         // E-posta adresi
+        public string Role { get; set; }          // Rolü (Admin, User vs.)
+        public DateTime CreatedAt { get; set; }   // Oluşturulma tarihi
     }
 }
+

@@ -1,12 +1,16 @@
-﻿using System;
+﻿using MediatR;
+using SupportRequestManagement.Application.Features.User.Dtos;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SupportRequestManagement.Application.Features.User.Queries
 {
-    internal class GetUsersByRoleQuery
+    public class GetUsersByRoleQuery : IRequest<List<UserDto>>
     {
+        public string Role { get; set; }
+
+        public GetUsersByRoleQuery(string role)
+        {
+            Role = role;
+        }
     }
 }

@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using SupportRequestManagement.Application.Features.User.Dtos;
 
 namespace SupportRequestManagement.Application.Features.User.Queries
 {
-    internal class GetUserByIdQuery
+    public class GetUserByIdQuery : IRequest<UserDto>
     {
+        public Guid UserId { get; set; }
+
+        public GetUserByIdQuery(Guid userId)
+        {
+            UserId = userId;
+        }
     }
 }
